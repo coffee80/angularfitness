@@ -1,0 +1,29 @@
+<h2 class="w3-light-blue">BMI Component </h2>
+Height
+<input type="number" class="w3-input" [(ngModel)]="height" />
+Weight
+<input type="number" class="w3-input" [(ngModel)]="weight" />
+BMI
+<input type="number" readonly class="w3-input" [value]="bmi()" />
+O 
+{{bmi() | number:'1.2-2'}}
+<!-- pipe, trasformazione dei valori del template, per renderli più carini o per aggiungere funzioni -->
+<!-- una pipe è solo una funzione che trasforma un input in output -->
+<!--
+    Console.print(formatNumber(bmi(),'1.2-2'));
+-->
+<br />
+<!-- se succede questo evento su questo pulsante viene eseguito reset -->
+<button class="w3-btn w3-light-blue" (click)="reset()" >
+    Reset 
+</button>
+<!--    
+    value è un attributo calcolato tramite il metodo bmi() 
+    del file bmi.component.ts, vale a dire, calcolato a livello di typescript
+-->
+<!--                                
+    two way binding. Significa che quello che succede alla casella di testo 
+    succede alla variabile height e quello che succede ad height succede alla casella di testo 
+    diremo che modello e vista sono legati in maniera biunivoca
+
+-->
